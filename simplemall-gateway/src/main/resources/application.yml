@@ -1,0 +1,21 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: simplemall-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8761/eureka/
+
+zuul:
+  prefix: /simplemall
+  routes:
+    product:
+      path: /simplemall-product/**
+      serviceId: eureka-client-product
+      strip-prefix: false
+    user:
+      path: /simplemall-user/**
+      serviceId: eureka-client-user
+      strip-prefix: false
