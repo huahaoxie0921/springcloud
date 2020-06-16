@@ -15,7 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "Mall_Product")
+@Table(name = "product")
 public class MallProduct {
 
     @Id

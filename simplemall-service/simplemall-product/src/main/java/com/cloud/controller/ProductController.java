@@ -24,7 +24,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    /*
+    /* GET
     localhost:7001/simplemall-product/get/product?id=
     localhost:9000/simplemall/simple-mall/get/product?id=
      */
@@ -35,9 +35,9 @@ public class ProductController {
         return productService.getProductInfo(id);
     }
 
-    /*
+    /* POST
     localhost:7001/simplemall-product/get/products
-    localhost:9000/simplemall/simple-mall/get/products
+    localhost:9000/simplemall/simplemall-product/get/products
      */
     @PostMapping("/get/products")
     public List<ProductInfo> getProductsInfos(@RequestBody ProductInfosRequest request) {

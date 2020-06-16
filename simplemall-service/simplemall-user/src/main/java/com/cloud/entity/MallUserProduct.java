@@ -15,7 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "Mall_User_Product")
+@Table(name = "user_product")
 public class MallUserProduct {
 
     @Id
@@ -28,8 +28,8 @@ public class MallUserProduct {
     private Long userId;
 
     @Basic
-    @Column(name = "course_id", nullable = false)
-    private Long courseId;
+    @Column(name = "product_id", nullable = false)
+    private Long productId;
 
     @Basic
     @CreatedDate

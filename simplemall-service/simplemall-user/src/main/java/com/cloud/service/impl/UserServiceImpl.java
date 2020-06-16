@@ -78,15 +78,15 @@ public class UserServiceImpl implements UserService {
         MallUser homepageUser = user.get();
         UserInfo userInfo = new UserInfo(homepageUser.getId(), homepageUser.getUsername(), homepageUser.getEmail());
 
-        List<MallUserProduct> userCourses = mallUserProductDao.findAllByUserId(id);
-        if (CollectionUtils.isEmpty(userCourses)) {
+        List<MallUserProduct> userProducts = mallUserProductDao.findAllByUserId(id);
+        if (CollectionUtils.isEmpty(userProducts)) {
             return new UserProductInfo(userInfo, Collections.emptyList());
         }
 
-        List<ProductInfo> courseInfos = productClient.getProductInfos(
-                new ProductInfosRequest(userCourses.stream().map(MallUserProduct::getCourseId).collect(Collectors.toList()))
+        List<ProductInfo> productInfos = productClient.getProductInfos(
+                new ProductInfosRequest(userProducts.stream().map(MallUserProduct::getProductId).collect(Collectors.toList()))
         );
 
-        return new UserProductInfo(userInfo, courseInfos);
+        return new UserProductInfo(userInfo, productInfos);
     }
 }
