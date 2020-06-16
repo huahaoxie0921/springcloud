@@ -4,18 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cloud</groupId>
-    <artifactId>simplemall-springcloud</artifactId>
+    <groupId>com.microservice.coupon</groupId>
+    <artifactId>coupon</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>simplemall-eureka</module>
-        <module>simplemall-gateway</module>
-        <module>simplemall-service</module>
-    </modules>
-    <packaging>pom</packaging>
 
-    <name>simplemall-spring-cloud</name>
-    <description>Project For simplemall using Spring Cloud</description>
+    <modules>
+        <module>eureka</module>
+        <module>gateway</module>
+        <module>coupon-service</module>
+    </modules>
+
+    <name>coupon</name>
+    <description>SpringCloud Project For Coupon Service</description>
+
+    <packaging>pom</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -51,5 +53,16 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>
